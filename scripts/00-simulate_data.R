@@ -42,7 +42,7 @@ all(sapply(simulated_trend_data[, -1], function(x) all(x <= 350)))
 # Check if the year coloum has integers
 all(sapply(simulated_trend_data$Year, function(x) is.integer(x)))
 
-# Check the year range
+# Check the year range, 2004 to 2023
 all(simulated_trend_data$Year >= 2004)
 
 all(simulated_trend_data$Year <= 2023)
