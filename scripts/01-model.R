@@ -18,13 +18,13 @@ ggplot(simulated_trend_data, aes(x = Year)) +
   geom_line(aes(y = Hospital_3, color = "Hospital 3")) +
   geom_line(aes(y = Hospital_4, color = "Hospital 4")) +
   geom_line(aes(y = Hospital_5, color = "Hospital 5")) +
-  labs(title = "Cancer Deaths Trend in Sydney Hospitals",
+  labs(title = "Cancer-Related Deaths in Sydney Hospitals",
        x = "Year", y = "Number of Deaths",
        color = "Hospital") +
   scale_color_manual(values = c("Hospital 1" = "blue", 
                                 "Hospital 2" = "red", 
                                 "Hospital 3" = "green",
-                                "Hospital 4" = "orange",
+                                "Hospital 4" = "brown",
                                 "Hospital 5" = "purple")) +
   theme_minimal()
 
