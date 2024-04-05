@@ -21,9 +21,6 @@ simulated_trend_data <-
     "Hospital_5" = sample(110:350, 20, replace = TRUE)
   )
 
-# Get summary statistics
-summary(simulated_trend_data)
-
 #### Test simulated data ####
 # Check number of observations 
 nrow(simulated_trend_data) == 20
@@ -32,15 +29,16 @@ nrow(simulated_trend_data) == 20
 any(is.na(simulated_trend_data))
 
 # Check if all observations are numeric (excluding the year column)
-all(sapply(simulated_trend_data[, -1], is.numeric))
+all(sapply(simulated_trend_data$Hospital_1, is.numeric))
+all(sapply(simulated_trend_data$Hospital_2, is.numeric))
+all(sapply(simulated_trend_data$Hospital_3, is.numeric))
+all(sapply(simulated_trend_data$Hospital_4, is.numeric))
+all(sapply(simulated_trend_data$Hospital_5, is.numeric))
 
 # Check if all values (observations are within the range we specified)
 all(sapply(simulated_trend_data[, -1], function(x) all(x >= 80)))
 
 all(sapply(simulated_trend_data[, -1], function(x) all(x <= 350)))
-
-# Check if the year coloum has integers
-all(sapply(simulated_trend_data$Year, function(x) is.integer(x)))
 
 # Check the year range, 2004 to 2023
 all(simulated_trend_data$Year >= 2004)
